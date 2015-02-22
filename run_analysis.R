@@ -8,6 +8,7 @@
 ## the instructions in the Coursera web site, a dataset will be generated following the tidy data principles.
 ##
 ## R packages used: dplyr, stringr
+## The script requires an Internet Connection to download the data set. 
 ##
 ## Versions:
 ## 1.0: Initial Version
@@ -184,7 +185,7 @@ apply_format <- function(target_data_set) {
 ## Return Value:
 ##	Tidy data set with the expected format.
 export_tidy_data <- function(target_data_set) {
-	write.table(target_data_set,file="tidyds.txt", row.names = FALSE, append=FALSE)
+	write.table(target_data_set,file=settings.tidy_file_name, row.names = FALSE, append=FALSE)
 }
 
 ## ----------------------------------------------------------------------
@@ -200,7 +201,7 @@ settings.tmp_file <- "ResearchData.zip"
 ## Name of the temporary folder
 settings.tmp_folder <- "./ResearchData"
 ## Name of the output file for the Tidy data set
-settings.tidy_file_name <- ""
+settings.tidy_file_name <- "tidyds.txt"
 ## Name of the files with data
 settings.tmp_features_file <- "UCI HAR Dataset/features.txt"
 settings.tmp_activities_file <- "UCI HAR Dataset/activity_labels.txt"
